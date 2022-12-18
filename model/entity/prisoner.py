@@ -1,10 +1,11 @@
 class Prisoner:
 
-    def __init__(self, name, age, article, term=0, ):
+    def __init__(self, name, age, article, term=0):
         self.name = name
         self.age = age
         self.term = term
         self.article = article
+
 
     @property
     def term(self):
@@ -17,6 +18,8 @@ class Prisoner:
         else:
             if not hasattr(self, "_term"):
                 self._term = 0
+            else:
+                raise ValueError("Term was wrong")
 
     @term.deleter
     def term(self):
@@ -56,6 +59,7 @@ class Prisoner:
     def age(self, age):
         if age > 18:
             self._age = age
+
 
     def __str__(self):
         return (f"{self._name}, age: {self._age}, "
