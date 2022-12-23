@@ -1,7 +1,16 @@
 from model.entity import *
+
+
 class Prison:
-    def __init__(self):
+    DEFAULT_SIZE = 100
+
+    def __init__(self, size=DEFAULT_SIZE):
         self._prisoners = []
+        self._size = size
+
+    @property
+    def size(self):
+        return self._size
 
     def __len__(self):
         return len(self._prisoners)
@@ -29,4 +38,3 @@ class Prison:
             msg = "List of prisoners: \n"
             for prisoner in self._prisoners:
                 msg += str(prisoner) + "\n"
-
