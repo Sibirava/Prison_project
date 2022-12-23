@@ -17,7 +17,7 @@ class TestJudge(unittest.TestCase):
 
     def test_calculate_total_term_with_incorrect_data(self):
         expected = -1
-        actual = Judge.calculate_total_term("hghyhgg")
+        actual = Judge.calculate_total_term(5)
 
         self.assertEqual(expected, actual)
 
@@ -27,7 +27,7 @@ class TestJudge(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def test_calculate_total_price_with_only_one_prisoner(self):
+    def test_calculate_total_term_with_only_one_prisoner(self):
         prison = Prison()
         prisoner = Prisoner("Ted", 33, 2, 10)
         prison.add(prisoner)

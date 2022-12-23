@@ -4,18 +4,18 @@ from model.entity import *
 class KillerCreator:
     @staticmethod
     def create(size):
-        NAMES = ("Ted Bundy", "Jack the Ripper", "Jeffrey Dahmer", "Harold Shipman",
-                 "John Wayne Gacy","Pedro Lopez", "Ed Gein", "Aileen Wuornos",
-                 "The Zodiac", "Edmund Kemper", "Albert Fish", "Gary Ridgway", "Сhikatilo")
+        NAMES = ("David Chapman", "Kevin James Loibl", "Nathan Gale", "Robert John Bardo",
+                 "Nikolai Martynov","Rodion Roskolnikov", "Dantes", "Graf Monte Kristo",
+                 "Brutus", "Herasim", "Djey Gatsbi", "Clayd Griffits")
 
         MAX_AGE = 100
         MIN_AGE = 16
 
         MIN_VICTIM = 1
-        MAX_VICTIM = 50
+        MAX_VICTIM = 3
 
-        MIN_TERM = 6
-        MAX_TERM = 100
+        MIN_TERM = 3
+        MAX_TERM = 50
 
         ls = []
 
@@ -24,6 +24,6 @@ class KillerCreator:
             age = random.randint(MIN_AGE, MAX_AGE)
             victim = random.randint(MIN_VICTIM, MAX_VICTIM)
             term = random.randint(MIN_TERM, MAX_TERM)
-            killer = Killer(name, age, victim, term)
+            killer = Killer(name, age, term, victim)
             ls.append(killer)
         return ls

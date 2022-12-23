@@ -1,7 +1,7 @@
 from model.entity import *
 
 class Killer(Prisoner):
-    def __init__(self, name, age, term, victim, article=2):
+    def __init__(self, name, age, term, victim=1, article=2):
         self._name = name
         self._age = age
         self._article = article
@@ -14,9 +14,11 @@ class Killer(Prisoner):
 
     @victim.setter
     def victim(self, victim):
-        self._victim = victim
+        if victim < 3:
+            self._victim = victim
+
 
     def __str__(self):
         return (f"{self._name}, age: {self._age}, "
                 f"article: {self._article}, term = {self._term}, "
-                f"number of victims = {self.victim}")
+                f"number of victims = {self._victim}")

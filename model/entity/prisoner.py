@@ -1,11 +1,9 @@
 class Prisoner:
-
-    def __init__(self, name, age, article, term=0):
-        self.name = name
-        self.age = age
-        self.term = term
-        self.article = article
-
+    def __init__(self, name, age, article, term):
+        self._name = name
+        self._age = age
+        self._term = term
+        self._article = article
 
     @property
     def term(self):

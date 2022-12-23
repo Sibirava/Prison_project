@@ -1,15 +1,14 @@
 from model.entity import *
-
 class Prison:
     def __init__(self):
         self._prisoners = []
 
+    def __len__(self):
+        return len(self._prisoners)
+
     def add(self, prisoner):
         if isinstance(prisoner, Prisoner):
             self._prisoners.append(prisoner)
-
-    def __len__(self):
-        return len(self._prisoners)
 
     def __bool__(self):
         return len(self._prisoners) != 0
@@ -24,5 +23,10 @@ class Prison:
         del self._prisoners[key]
 
     def __str__(self):
-        return f""
+        if not self._prisoners:
+            return f"Prison is empty"
+        else:
+            msg = "List of prisoners: \n"
+            for prisoner in self._prisoners:
+                msg += str(prisoner) + "\n"
 
