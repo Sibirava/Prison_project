@@ -2,13 +2,16 @@ from model.entity import *
 
 class Judge:
     @staticmethod
-    def calculate_total_term(prison):
-        if isinstance(prison, Prison):
-            total = 0
-            for prisoner in prison:
-                if isinstance(prisoner, Prisoner):
-                    total += prisoner.term
-            return total
+    def calculate_total_term(prison):    # не понимаю, почему не считает тюрьму тюрьмой и всегда выдает -1
+        if not isinstance(prison, Prison):
+            return -1
+
+        total = 0
+
+        for prisoner in prison:
+            if isinstance(prisoner, Prisoner):
+                total += prisoner.term
+        return total
 
 
     @staticmethod
@@ -47,6 +50,7 @@ class Judge:
                 count_drugdealers += 1
         return count_drugdealers
 
+    @staticmethod
     def count_robbers(prisoners):
         if not isinstance(prisoners, (list, tuple)):
             return

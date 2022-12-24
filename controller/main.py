@@ -21,7 +21,6 @@ def main():
    print(f"\nTotal term for all the prisoners: {Judge.calculate_terms(ls)} years")
 
    print(f"\nMax terms has: {Judge.find_max_term(ls)}")
-   print(f"{Judge.calculate_total_term(ls)}")
 
    print(f"\nThere are {Judge.count_killers(ls)} killers and {Judge.count_drugdealers(ls)} drugdealers "
          f"and {Judge.count_robbers(ls)} robbers in prison")
@@ -31,4 +30,4 @@ def main():
    print(f"\nThe amount of death penalties in prison is {Judge.count_death_penalties(ls)}")
 
 if __name__ == "__main__":
-    main()
+   main()
