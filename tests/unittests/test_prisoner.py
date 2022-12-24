@@ -18,17 +18,7 @@ class TestPrisoner(unittest.TestCase):
         actual = pr.term
         self.assertEqual(expected, actual)
 
-    # def test_setter_negative(self):
-    #     prisoner = Prisoner("Alex", 22, 2)
-    #
-    #     self.assertRaises(ValueError, prisoner.term, -10)
-    #
-    #     try:
-    #         prisoner.term = -10
-    #     except ValueError:
-    #         pass
-    #     else:
-    #         self.fail("jhdfbgdg")
+
 
 if __name__ == "__main__":
     unittest.main()
